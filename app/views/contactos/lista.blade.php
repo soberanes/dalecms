@@ -2,16 +2,27 @@
 
 @section('sidebar')
     @parent
-    Lista de contactos
 @stop
 
 @section('content')
-    <h1>Contactos</h1>
-    {{ HTML::link('contactos/nuevo', 'Crear contacto') }}
+    <hgroup class="wrap">
+        <h1>Contactos</h1>
+		<nav>
+            {{ HTML::link('admin/nuevo', 'Crear contacto', array('class' => 'btn')) }}
+        </nav>
+    </hgroup>
+    <section class="wrap">
 
-    <ul>
-      @foreach($contactos as $contacto)
-        <li>{{ HTML::link('contactos/'.$contacto->id, $contacto->nombre.' '.$contacto->apellido) }}</li>
-      @endforeach
-    </ul>
+        <ul class="list">
+          @foreach($contactos as $contacto)
+            <li>
+                <a href="{{ URL::route('user', $contacto->id) }}">
+                    <strong>{{ $contacto->nombre . ' ' . $contacto->apellido }}</strong>
+                    <span>Username: {{ $contacto->nombre }}</span>
+                    <em class="highlight">Admin</em>
+                </a>
+            </li>
+          @endforeach
+        </ul>
+    </section>
 @stop

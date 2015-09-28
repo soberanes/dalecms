@@ -2,17 +2,29 @@
 
 @section('sidebar')
     @parent
-    Formulario de contacto
 @stop
 
 @section('content')
-    {{ HTML::link('contactos', 'volver') }}
-    <h1>Crear contacto</h1>
-    {{ Form::open(array('url' => 'contactos/crear')) }}
-        {{ Form::label('nombre', 'Nombre') }}
-        {{ Form::text('nombre', '') }}
-        {{ Form::label('apellido', 'Apellido') }}
-        {{ Form::text('apellido', '') }}
-        {{ Form::submit('Guardar') }}
-    {{ Form::close() }}
+    <hgroup class="wrap">
+        <h1>Crear contacto</h1>
+        <nav>
+            {{ HTML::link('admin', 'Volver', array('class' => 'btn back-btn')) }}
+        </nav>
+    </hgroup>
+    <section class="wrap">
+        {{ Form::open(array('url' => 'admin/crear')) }}
+            <fieldset class="half split">
+                {{ Form::label('nombre', 'Nombre') }}
+                {{ Form::text('nombre', '') }}
+            </fieldset>
+            <fieldset class="half split">
+                {{ Form::label('apellido', 'Apellido') }}
+                {{ Form::text('apellido', '') }}
+            </fieldset>
+            <aside class="buttons">
+                {{ Form::button('Guardar', array('class' => 'btn', 'type' => 'submit')) }}
+            </aside>
+        {{ Form::close() }}
+    </section>
+
 @stop

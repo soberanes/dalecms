@@ -19,4 +19,4 @@ Route::get('/', function()
 Route::get('admin', array('uses' => 'ContactosController@mostrarContactos'));
 Route::get('admin/nuevo', array('uses' => 'ContactosController@nuevoContacto'));
 Route::post('admin/crear', array('uses' => 'ContactosController@crearContacto'));
-Route::get('admin/{id}', array('uses' => 'ContactosController@verContacto'));
+Route::get('admin/{id}', array('as' => 'user', 'uses' => 'ContactosController@verContacto'));

@@ -238,6 +238,14 @@ hgroup {
 			background: #cdd3db;
 		}
 
+	.back-btn{
+		background: #d4d9e0;
+		color: #7c8592;
+	}
+	.back-btn:hover{
+		background: #cdd3db;
+	}
+
 /*
 	Footer
 */
@@ -263,7 +271,7 @@ hgroup {
 .list {
 	list-style: none;
 	width: 100%;
-	
+
 	border-top: 1px solid #dadfe5;
 }
 	.list li a {
@@ -273,7 +281,7 @@ hgroup {
 
 		position: relative;
 		overflow: hidden;
-		
+
 		border-bottom: 1px solid #dadfe5;
 	}
 	    .list li a:hover {
@@ -369,7 +377,7 @@ hgroup {
 		margin: 0 auto 15px;
 		background: url('../img/icons.png') no-repeat;
 	}
-	
+
 .sidebar + .main {
     float: right;
     width: 760px;
@@ -379,7 +387,7 @@ hgroup {
 .sidebar {
     float: left;
     width: 150px;
-    
+
     border-top: 1px solid #dadfe5;
 }
 	.sidebar a {
@@ -388,7 +396,7 @@ hgroup {
 
 		font-size: 13px;
 		color: #616a71;
-		
+
 		-webkit-transition: none;
 
 		border-bottom: 1px solid #dadfe5;
@@ -399,17 +407,17 @@ hgroup {
 		.sidebar a.active {
 			background: #fff;
 		}
-		
+
 .statuses .icon {
     display: inline-block;
     width: 16px;
     height: 16px;
     margin-right: 2px;
-    
+
     position: relative;
     top: 3px;
     left: -7px;
-    
+
     background: url('../img/statuses.png');
 }
     .statuses a:hover .icon { background-position: -16px 0; }

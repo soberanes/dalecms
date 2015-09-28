@@ -27,7 +27,7 @@ class ContactosController extends BaseController
     {
         Contact::create(Input::all());
 
-        return Redirect::to('contactos');
+        return Redirect::to('admin');
     }
 
     /**
