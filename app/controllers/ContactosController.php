@@ -40,4 +40,36 @@ class ContactosController extends BaseController
         return View::make('contactos.ver', array('contacto' => $contacto));
     }
 
+    /**
+     * Modificar un contacto
+     */
+    public function editarContacto($id)
+    {
+        $contacto = Contact::find($id);
+        if (is_null($contacto))
+        {
+            return Redirect::route('admin');
+        }
+        return View::make('contactos.editar', compact('contacto'));
+
+    }
+
+    public function updateContacto($id){
+
+        $input = Input::all();
+
+        $contact = Contact::find($id);
+        $contact->update($input);
+        return Redirect::route('admin', $id);
+
+    }
+
+    public function deleteContacto($id)
+    {
+        $contact = Contact::find($id);
+        $contact->delete();
+
+        return Redirect::route('admin');
+    }
+
 }

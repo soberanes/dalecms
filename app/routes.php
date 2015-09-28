@@ -16,7 +16,12 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('admin', array('uses' => 'ContactosController@mostrarContactos'));
+
+
+Route::get('admin', array('as' => 'admin', 'uses' => 'ContactosController@mostrarContactos'));
 Route::get('admin/nuevo', array('uses' => 'ContactosController@nuevoContacto'));
 Route::post('admin/crear', array('uses' => 'ContactosController@crearContacto'));
-Route::get('admin/{id}', array('as' => 'user', 'uses' => 'ContactosController@verContacto'));
+Route::get('admin/{id}', array('as' => 'contact.show', 'uses' => 'ContactosController@verContacto'));
+Route::get('admin/edit/{id}', array('as' => 'admin/edit', 'uses' => 'ContactosController@editarContacto'));
+Route::post('admin/update/{id}', array('as' => 'contacts.update', 'uses' => 'ContactosController@updateContacto'));
+Route::get('admin/delete/{id}', array('as' => 'contact.delete', 'uses' => 'ContactosController@deleteContacto'));

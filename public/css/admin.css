@@ -328,6 +328,21 @@ hgroup {
 		margin-left: 10px;
 	}
 
+	.list h2 {
+		text-align: center;
+	    margin: 5% 5% 3%;
+	    font-weight: 100;
+	    font-size: 2em;
+	}
+	.list p.lead {
+		font-weight: 100;
+		text-align: center;
+	}
+	.list p.lead span {
+		font-weight: 700;
+		color: #6aad28;
+	}
+
 [draggable] {
 	-moz-user-select: none;
 	-khtml-user-select: none;

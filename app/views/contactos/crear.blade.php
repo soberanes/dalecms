@@ -6,7 +6,7 @@
 
 @section('content')
     <hgroup class="wrap">
-        <h1>Crear contacto</h1>
+        <h1>Agregar nuevo contacto</h1>
         <nav>
             {{ HTML::link('admin', 'Volver', array('class' => 'btn back-btn')) }}
         </nav>
