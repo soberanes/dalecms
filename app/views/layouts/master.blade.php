@@ -26,7 +26,7 @@
                         </ul>
                     </nav>
 
-                    {{ HTML::link('/', 'Logout', array('class' => 'btn')) }}
+                    {{ HTML::link('logout', 'Logout', array('class' => 'btn')) }}
                     {{ HTML::link('/', 'Visitar sitio', array('class' => 'btn', 'target' => '_blank')) }}
 
                 </div>
