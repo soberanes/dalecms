@@ -65,3 +65,12 @@ body.login {
 		width: 300px;
 	}
 
+    .login-link{
+        margin-top: 55px;
+        border-top: 1px solid;
+        padding-top: 10px;
+    }
+    .login-link a{
+        font-size: 13px;
+        line-height: 38px;
+    }

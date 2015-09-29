@@ -18,9 +18,9 @@
         <fieldset class="half split">
             {{ Form::text('email', '', array('placeholder' => 'Email')) }}
         </fieldset>
-        <p>
-            {{ Form::button('Registrarse', array('type' => 'submit')) }}
-            {{ HTML::link('admin/contacts', 'Volver a login', array('class' => 'btn back-btn')) }}
+        <p class="buttons">
+            {{ HTML::link('admin/contacts', 'Back to login') }}
+            {{ Form::button('Register', array('type' => 'submit')) }}
         </p>
     {{ Form::close() }}
     </section>

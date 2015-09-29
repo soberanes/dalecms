@@ -16,6 +16,9 @@
             <a href="/blog/admin/amnesia">Forgotten your password?</a>
             {{ Form::button('Login', array('type' => 'submit')) }}
         </p>
+        <p class="login-link">
+            {{ HTML::link('register', 'Register', array('class' => 'reg-link')) }}
+        </p>
     </fieldset>
     {{ Form::close() }}
 </section>
