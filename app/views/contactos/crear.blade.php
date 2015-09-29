@@ -12,6 +12,13 @@
         </nav>
     </hgroup>
     <section class="wrap">
+        <div class="notifications">
+            @if ($errors->any())
+                <ul>
+                    {{ implode('', $errors->all('<li class="error">:message</li>')) }}
+                </ul>
+            @endif
+        </div>
         {{ Form::open(array('url' => 'admin/contacts/store')) }}
             <fieldset class="half split">
                 {{ Form::label('nombre', 'Nombre') }}
@@ -25,6 +32,7 @@
                 {{ Form::button('Guardar', array('class' => 'btn', 'type' => 'submit')) }}
             </aside>
         {{ Form::close() }}
+
     </section>
 
 @stop

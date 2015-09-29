@@ -25,9 +25,20 @@ class ContactosController extends BaseController
      */
     public function crearContacto()
     {
-        Contact::create(Input::all());
+        $rules = array(
+            'nombre' => 'required|max:250',
+            'apellido' => 'required|max:250',
+        );
 
-        return Redirect::route('contacts.list');
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::to('/admin/contacts/add')
+                                ->withInput()->withErrors($validator);
+        }else{
+            Contact::create(Input::all());
+            return Redirect::route('contacts.list');
+        }
     }
 
     /**
@@ -55,12 +66,24 @@ class ContactosController extends BaseController
     }
 
     public function updateContacto($id){
+        $rules = array(
+            'nombre' => 'required|max:250',
+            'apellido' => 'required|max:250',
+        );
 
-        $input = Input::all();
+        $validator = Validator::make(Input::all(), $rules);
 
-        $contact = Contact::find($id);
-        $contact->update($input);
-        return Redirect::route('contacts.list');
+        if ($validator->fails()) {
+            return Redirect::route('contacts.edit', $id)
+                    ->withInput()
+                    ->withErrors($validator);
+        }else{
+            $input = Input::all();
+
+            $contact = Contact::find($id);
+            $contact->update($input);
+            return Redirect::route('contacts.list');
+        }
 
     }
 

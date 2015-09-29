@@ -8,10 +8,17 @@
     <hgroup class="wrap">
         <h1>Editar {{ $contacto->nombre }}</h1>
         <nav>
-            {{ HTML::link('admin', 'Volver', array('class' => 'btn back-btn')) }}
+            {{ HTML::link('admin/contacts', 'Volver', array('class' => 'btn back-btn')) }}
         </nav>
     </hgroup>
     <section class="wrap">
+        <div class="notifications">
+            @if ($errors->any())
+                <ul>
+                    {{ implode('', $errors->all('<li class="error">:message</li>')) }}
+                </ul>
+            @endif
+        </div>
         {{ Form::model($contacto, array('route' =>
             array('contacts.update', $contacto->id))) }}
             <fieldset class="half split">
@@ -33,12 +40,6 @@
         </aside>
 
         {{ Form::close() }}
-
-        @if ($errors->any())
-            <ul>
-                {{ implode('', $errors->all('<li class="error">:message</li>')) }}
-            </ul>
-        @endif
 
     </section>
 @stop

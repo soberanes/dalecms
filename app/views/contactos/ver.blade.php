@@ -8,7 +8,7 @@
     <hgroup class="wrap">
         <h1>Detalle de {{ $contacto->nombre }}</h1>
         <nav>
-            {{ HTML::link('admin', 'Volver', array('class' => 'btn back-btn')) }}
+            {{ HTML::link('admin/contacts', 'Volver', array('class' => 'btn back-btn')) }}
         </nav>
     </hgroup>
     <section class="wrap">
@@ -25,8 +25,8 @@
 
         <p><span>Fecha de creación: <em>{{ $contacto->created_at }}</em></span></p>
         <aside class="buttons">
-            <a href="{{ URL::route('admin/edit', $contacto->id) }}" class="btn">Editar</a>
-            <a href="{{ URL::route('contact.delete', $contacto->id) }}" class="btn delete red">Eliminar</a>
+            <a href="{{ URL::route('contacts.edit', $contacto->id) }}" class="btn">Editar</a>
+            <a href="{{ URL::route('contacts.delete', $contacto->id) }}" class="btn delete red">Eliminar</a>
         </aside>
     </section>
 @stop
