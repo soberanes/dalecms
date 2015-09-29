@@ -8,11 +8,11 @@
     <hgroup class="wrap">
         <h1>Agregar nuevo contacto</h1>
         <nav>
-            {{ HTML::link('admin', 'Volver', array('class' => 'btn back-btn')) }}
+            {{ HTML::link('admin/contacts', 'Volver', array('class' => 'btn back-btn')) }}
         </nav>
     </hgroup>
     <section class="wrap">
-        {{ Form::open(array('url' => 'admin/crear')) }}
+        {{ Form::open(array('url' => 'admin/contacts/store')) }}
             <fieldset class="half split">
                 {{ Form::label('nombre', 'Nombre') }}
                 {{ Form::text('nombre', '') }}

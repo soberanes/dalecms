@@ -8,7 +8,7 @@
     <hgroup class="wrap">
         <h1>Contactos</h1>
 		<nav>
-            {{ HTML::link('admin/nuevo', 'Agregar nuevo contacto', array('class' => 'btn')) }}
+            {{ HTML::link('admin/contacts/add', 'Agregar nuevo contacto', array('class' => 'btn')) }}
         </nav>
     </hgroup>
     <section class="wrap">
@@ -24,7 +24,7 @@
             @else
                 @foreach($contactos as $contacto)
                 <li>
-                    <a href="{{ URL::route('admin/edit', $contacto->id) }}">
+                    <a href="{{ URL::route('contacts.edit', $contacto->id) }}">
                         <strong>{{ $contacto->nombre . ' ' . $contacto->apellido }}</strong>
                         <span>Username: {{ $contacto->nombre }}</span>
                         <em class="highlight">{{ $contacto->created_at }}</em>

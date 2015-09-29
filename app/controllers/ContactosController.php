@@ -4,7 +4,7 @@ class ContactosController extends BaseController
     /**
      * Muestra la lista de contactos
      */
-    public function mostrarContactos()
+    public function listContactos()
     {
         $contactos = Contact::all();
 
@@ -27,7 +27,7 @@ class ContactosController extends BaseController
     {
         Contact::create(Input::all());
 
-        return Redirect::to('admin');
+        return Redirect::route('contacts.list');
     }
 
     /**
@@ -48,7 +48,7 @@ class ContactosController extends BaseController
         $contacto = Contact::find($id);
         if (is_null($contacto))
         {
-            return Redirect::route('admin');
+            return Redirect::route('contacts.list');
         }
         return View::make('contactos.editar', compact('contacto'));
 
@@ -60,7 +60,7 @@ class ContactosController extends BaseController
 
         $contact = Contact::find($id);
         $contact->update($input);
-        return Redirect::route('admin', $id);
+        return Redirect::route('contacts.list');
 
     }
 
@@ -69,7 +69,7 @@ class ContactosController extends BaseController
         $contact = Contact::find($id);
         $contact->delete();
 
-        return Redirect::route('admin');
+        return Redirect::route('contacts.list');
     }
 
 }

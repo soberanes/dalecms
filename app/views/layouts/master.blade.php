@@ -21,6 +21,7 @@
                             <li><a href="#">Páginas</a></li>
                             <li><a href="#">Categorías</a></li>
                             <li><a href="#">Usuarios</a></li>
+                            <li><a href="{{ URL::to('admin/contacts') }}">Contactos</a></li>
                             <li><a href="#">Extends</a></li>
                         </ul>
                     </nav>

@@ -16,12 +16,14 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::group(array('prefix'=>'admin/contacts'),function(){
 
+	Route::get('/', array('as' => 'contacts.list', 'uses' => 'ContactosController@listContactos'));
+	Route::get('/add', array('as' => 'contacts.new', 'uses' => 'ContactosController@nuevoContacto'));
+	Route::post('/store', array('as' => 'contacts.store', 'uses' => 'ContactosController@crearContacto'));
+	Route::get('/show/{id}', array('as' => 'contacts.show', 'uses' => 'ContactosController@verContacto'));
+	Route::get('/edit/{id}', array('as' => 'contacts.edit', 'uses' => 'ContactosController@editarContacto'));
+	Route::post('/update/{id}', array('as' => 'contacts.update', 'uses' => 'ContactosController@updateContacto'));
+	Route::get('/delete/{id}', array('as' => 'contact.delete', 'uses' => 'ContactosController@deleteContacto'));
 
-Route::get('admin', array('as' => 'admin', 'uses' => 'ContactosController@mostrarContactos'));
-Route::get('admin/nuevo', array('uses' => 'ContactosController@nuevoContacto'));
-Route::post('admin/crear', array('uses' => 'ContactosController@crearContacto'));
-Route::get('admin/{id}', array('as' => 'contact.show', 'uses' => 'ContactosController@verContacto'));
-Route::get('admin/edit/{id}', array('as' => 'admin/edit', 'uses' => 'ContactosController@editarContacto'));
-Route::post('admin/update/{id}', array('as' => 'contacts.update', 'uses' => 'ContactosController@updateContacto'));
-Route::get('admin/delete/{id}', array('as' => 'contact.delete', 'uses' => 'ContactosController@deleteContacto'));
+});
