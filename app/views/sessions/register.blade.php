@@ -5,7 +5,7 @@
         <h1>Create an account</h1>
     </hgroup>
     <section class="wrap">
-    {{ Form::open(array('route' => 'register/save', 'class'=>'form-horizontal' )) }}
+    {{ Form::open(array('url' => 'register/save', 'method' => 'post', 'class'=>'form-horizontal' )) }}
         <fieldset class="half split">
             {{ Form::text('real_name', '', array('placeholder' => 'Full Name')) }}
         </fieldset>

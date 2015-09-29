@@ -47,6 +47,23 @@ class SessionsController extends BaseController {
 
     public function save()
     {
-        return "ok";
+        $input = Input::all();
+
+        $data_user = array(
+            'username'  => $input['username'],
+            'password'  => Hash::make($input['password']),
+            'email'     => $input['email'],
+            'real_name' => $input['real_name'],
+            'status'    => 1,
+            'role'      => 1,
+        );
+
+        $new_user = User::create($data_user);
+        if($new_user){
+            return Redirect::to('login');
+        }else{
+            return "Bad =(";
+        }
+
     }
 }
