@@ -64,6 +64,9 @@ body.login {
 	.login .notification {
 		width: 300px;
 	}
+    .login .notifications .error{
+        list-style: none;
+    }
 
     .login-link{
         margin-top: 55px;

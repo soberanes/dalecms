@@ -15,7 +15,8 @@ class SessionsController extends BaseController {
 		if($attempt) {
 			return Redirect::to('admin/contacts');
 		} else {
-			return Redirect::to('login');
+			return Redirect::to('login')
+                                ->withInput()->withErrors('Username or password is wrong.');
 		}
 	}
 
@@ -23,7 +24,7 @@ class SessionsController extends BaseController {
 	{
         Auth::logout();
 		Session::flush();
-		return Redirect::to('login');
+		return Redirect::to('login', array('You are now logged out.'));
 	}
 
     public function register()

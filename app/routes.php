@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'LandingController@index');
 
 Route::group(array('prefix'=>'admin/contacts', 'before' => 'auth'),function()
 {

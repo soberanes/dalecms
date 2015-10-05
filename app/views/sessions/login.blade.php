@@ -2,6 +2,13 @@
 
 @section('content')
 <section class="login content">
+    <div class="notifications">
+        @if ($errors->any())
+            <ul>
+                {{ implode('', $errors->all('<li class="error">:message</li>')) }}
+            </ul>
+        @endif
+    </div>
     {{ Form::open(array('route' => 'sessions.store', 'class'=>'form-horizontal' )) }}
     <fieldset>
         <p>

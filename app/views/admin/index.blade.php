@@ -5,9 +5,6 @@
 @stop
 
 @section('content')
-    <hgroup class="wrap">
-        <h1>Panel de administración</h1>
-    </hgroup>
     <section class="wrap">
         <ul class="list">
             <li>
