@@ -1,11 +1,21 @@
 <?php
 class SessionsController extends BaseController {
 
+	/**
+	 * Show login form to user
+	 *
+	 * @return View
+	 */
 	public function login()
 	{
 		return View::make('sessions.login');
 	}
 
+	/**
+	 * Log in user in system
+	 *
+	 * @return View
+	 */
 	public function store()
 	{
         $input = Input::all();
@@ -20,6 +30,11 @@ class SessionsController extends BaseController {
 		}
 	}
 
+	/**
+	 * Logout and destroying session
+	 *
+	 * @return View
+	 */
 	public function destroy()
 	{
         Auth::logout();
@@ -27,25 +42,21 @@ class SessionsController extends BaseController {
 		return Redirect::to('login', array('You are now logged out.'));
 	}
 
+	/**
+	 * Show register form to user
+	 *
+	 * @return View
+	 */
     public function register()
     {
-        /*
-        $user = array(
-            'username'  => 'paul',
-            'password'  => Hash::make('sopa10'),
-            'email'     => 'paul@lightcone.com',
-            'real_name' => 'Paul Lightcone',
-            'status'    => 1,
-            'role'      => 1,
-        );
-
-        $newUser = User::create($user);
-        var_dump($newUser);
-        die;
-        */
         return View::make('sessions.register');
     }
 
+	/**
+	 * Register a user in system
+	 *
+	 * @return Type
+	 */
     public function save()
     {
         $input = Input::all();
@@ -65,6 +76,33 @@ class SessionsController extends BaseController {
         }else{
             return "Bad =(";
         }
-
     }
+
+	/**
+	 * Show reset password to user
+	 *
+	 * @return View
+	 */
+	public function repassword()
+	{
+		return View::make('sessions.repassword');
+
+	}
+
+	/**
+	 * Restore user's password in system
+	 *
+	 * @return Type
+	 */
+	public function resetPassword()
+	{
+		$input == Input::all();
+		echo "<pre>";
+		var_dump($input);
+		echo "</pre>";
+		die;
+
+	}
+
+
 }

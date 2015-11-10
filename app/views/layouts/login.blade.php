@@ -13,7 +13,7 @@
             <header class="top">
                 <div class="wrap">
                     <aside class="logo">
-                        <a href="/blog/admin/users/login">Anchor CMS</a>
+                        <a href="/blog/admin/users/login">Anchor CMS</a> @section('sidebar-title') @show
                     </aside>
                 </div>
             </header>

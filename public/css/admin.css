@@ -52,68 +52,73 @@ fieldset, a, img {
 	background: #444f5f;
 }
 
-	.top a {
-		display: inline-block;
-		padding: 0 18px;
+.top a {
+display: inline-block;
+padding: 0 18px;
 
-		font-size: 13px;
-		font-weight: bold;
-		line-height: 34px;
-	}
+font-size: 13px;
+font-weight: bold;
+line-height: 34px;
+}
 
-	.top .logo {
-		margin-right: 25px;
-	}
+.top .logo {
+margin-right: 25px;
+}
 
-		.top .logo a {
-			padding: 0;
-			background: transparent url('../img/logo.png') no-repeat center center;
-			width: 24px;
-			height: 34px;
-			text-indent: -1000px;
-		}
+.top .logo a {
+padding: 0;
+background: transparent url('../img/logo.png') no-repeat center center;
+width: 24px;
+height: 34px;
+text-indent: -1000px;
+}
+.top .logo h2 {
+display: inline-block;
+margin-left: 5px;
+vertical-align: sub;
+}
 
-	.top nav, .top nav li, .top nav a {
-		float: left;
-		list-style: none;
-	}
+.top nav, .top nav li, .top nav a {
+float: left;
+list-style: none;
+}
 
-	.top nav img {
-		position: relative;
-		top: 4px;
-	}
+.top nav img {
+position: relative;
+top: 4px;
+}
 
-	.top nav a {
-		margin-right: 15px;
-		color: #7b8eaa;
-	}
+.top nav a {
+margin-right: 15px;
+color: #7b8eaa;
+}
 
-		.top nav a:hover {
-			color: #a4b4cb;
-		}
+.top nav a:hover {
+	color: #a4b4cb;
+}
 
-		.top nav .active a {
-			color: #394556;
-			background: #687993;
+.top nav .active a {
+	color: #394556;
+	background: #687993;
 
-			border-radius: 5px;
-		}
+	border-radius: 5px;
+}
 
-	.top .btn {
-		float: right;
-		padding: 0 16px;
-		margin-left: 20px;
+.top .btn {
+float: right;
+padding: 0 16px;
+margin-left: 20px;
 
-		background: #38414f;
-		color: #6a788d;
+background: #38414f;
+color: #6a788d;
 
-		border-radius: 5px;
-	}
+border-radius: 5px;
+}
 
-		.top .btn:hover {
-			color: #8491a5;
-			background: #2f3744;
-		}
+.top .btn:hover {
+	color: #8491a5;
+	background: #2f3744;
+}
 
 /*
 	Heading

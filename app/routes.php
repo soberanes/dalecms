@@ -29,6 +29,8 @@ Route::group(array('prefix'=>'admin/contacts', 'before' => 'auth'),function()
 Route::get('login', 'SessionsController@login');
 Route::get('logout', 'SessionsController@destroy');
 Route::get('register', 'SessionsController@register');
+Route::get('resetpwd', 'SessionsController@repassword');
+Route::get('resetpwd/save', 'SessionsController@resetPasword');
 Route::post('register/save', array('as' => 'register/save', 'uses' => 'SessionsController@save'));
 Route::resource('sessions', 'SessionsController');
 

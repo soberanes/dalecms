@@ -1,5 +1,9 @@
 @extends('layouts.login')
 
+@section('sidebar-title')
+    <h2>Login</h2>
+@stop
+
 @section('content')
 <section class="login content">
     <div class="notifications">
@@ -20,7 +24,7 @@
             {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'password')) }}
         </p>
         <p class="buttons">
-            <a href="/blog/admin/amnesia">Forgotten your password?</a>
+            {{ HTML::link('resetpwd', 'Forgotten your password?') }}
             {{ Form::button('Login', array('type' => 'submit')) }}
         </p>
         <p class="login-link">

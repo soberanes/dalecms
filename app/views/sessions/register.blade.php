@@ -1,9 +1,10 @@
 @extends('layouts.login')
 
+@section('sidebar-title')
+    <h2>Create an account</h2>
+@stop
+
 @section('content')
-    <hgroup class="wrap">
-        <h1>Create an account</h1>
-    </hgroup>
     <section class="wrap">
     {{ Form::open(array('url' => 'register/save', 'method' => 'post', 'class'=>'form-horizontal' )) }}
         <fieldset class="half split">
